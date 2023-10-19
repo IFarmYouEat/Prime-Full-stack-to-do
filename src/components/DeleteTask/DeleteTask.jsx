@@ -1,7 +1,14 @@
+import axios from 'axios';
 
+function DeleteTask(props){
 
-function DeleteTask(){
-    return <p>Delete</p>;
+    const deleteTask = () => {
+        console.log(props.id);
+    };
+
+    return (
+        <button onClick={deleteTask}>Delete</button>
+    )
 };
 
 export default DeleteTask;

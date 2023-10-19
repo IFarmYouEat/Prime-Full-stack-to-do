@@ -18,7 +18,7 @@ function DisplayTask(props) {
        <td>{props.task.task}</td> 
        <td>{props.task.priority}</td>
        <td>{mother(props.task.complete)}</td>
-       <td><DeleteTask/></td>
+       <td><DeleteTask id={props.task.id}/></td>
      </tr>
    )
 }
