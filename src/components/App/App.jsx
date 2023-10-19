@@ -1,5 +1,8 @@
 import {useState, useEffect} from 'react';
 import axios from 'axios';
+import DisplayTask from '../DisplayTask/DisplayTask.jsx';
+import NewTask from '../NewTask/NewTask.jsx';
+
 
 function App () {
   
@@ -22,7 +25,23 @@ function App () {
   return (
     <div>
       <h1>TO DO APP</h1>
-      {JSON.stringify(taskList)}
+      <NewTask/>
+      <table>
+        <thead>
+          <tr>
+            <th>Task</th>
+            <th>Priority</th>
+            <th>Complete</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            taskList.map((task) => {
+              return <DisplayTask key={task.id} task={task} />
+            })
+          }
+        </tbody>
+      </table>
     </div>
   );
 

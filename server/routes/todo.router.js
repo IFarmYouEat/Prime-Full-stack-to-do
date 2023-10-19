@@ -17,6 +17,20 @@ router.get('/', (req,res) => {
 })
 
 // POST
+router.post('/',(req, res) => {
+    const task = req.body;
+    const sqlText =     `INSERT INTO "tasks" ("task", "priority"
+                        VALUES (S1, S2);`;
+    pool.query(sqlText, [task.task, task.priority])
+        .then((result) => {
+            console.log('Added task to database', task);
+            res.sendStatus(201);
+        })
+        .catch ((error) =>{
+            console.log(`Error sending task to database query ${sqlText}`, error);
+            res.sendStatus(500);
+        })
+})
 
 // PUT
 
