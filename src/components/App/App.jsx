@@ -2,6 +2,8 @@ import {useState, useEffect} from 'react';
 import axios from 'axios';
 import DisplayTask from '../DisplayTask/DisplayTask.jsx';
 import NewTask from '../NewTask/NewTask.jsx';
+import Container from '@mui/material/Container';
+import Grid from '@mui/material/Grid';
 
 
 function App () {
@@ -23,9 +25,10 @@ function App () {
   }, []);
 
   return (
-    <div>
+    <Container>
       <h1>TO DO APP</h1>
       <NewTask/>
+      
       <table>
         <thead>
           <tr>
@@ -37,12 +40,12 @@ function App () {
         <tbody>
           {
             taskList.map((task) => {
-              return <DisplayTask key={task.id} task={task} />
+              return <DisplayTask key={task.id} task={task} getTaskList={getTaskList} />
             })
           }
         </tbody>
       </table>
-    </div>
+      </Container>
   );
 
 }
