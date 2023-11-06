@@ -1,24 +1,24 @@
 import DeleteTask from '../DeleteTask/DeleteTask.jsx';
+import MarkComplete from '../MarkComplete/MarkComplete.jsx';
 
 
 function DisplayTask(props) {
 
     console.log(props.task.task, props.task.complete)
 
-    const mother = (bool) => {
+    const isComplete = (bool) => {
         if(bool === true){
-            return 'complete';
+            return 'Complete';
         }else if(bool === false){
-            return 'incomplete';
+            return 'Incomplete';
         }
     }
-
 
     return(
      <tr>
        <td>{props.task.task}</td> 
-       <td>{props.task.priority}</td>
-       <td>{mother(props.task.complete)}</td>
+       <td>{isComplete(props.task.complete)}</td>
+       <td><MarkComplete id={props.task.id} getTaskList={props.getTaskList}/></td>
        <td><DeleteTask id={props.task.id} getTaskList={props.getTaskList}/></td>
      </tr>
    )

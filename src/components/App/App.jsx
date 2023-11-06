@@ -27,13 +27,12 @@ function App () {
   return (
     <Container>
       <h1>TO DO APP</h1>
-      <NewTask/>
+      <NewTask getTaskList={getTaskList}/>
       
       <table>
         <thead>
           <tr>
             <th>Task</th>
-            <th>Priority</th>
             <th>Complete</th>
           </tr>
         </thead>
@@ -50,4 +49,4 @@ function App () {
 
 }
 
-export default App
+export default App;
