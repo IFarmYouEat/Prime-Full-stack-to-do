@@ -1,5 +1,8 @@
 import axios from 'axios';
 import Button from '@mui/material/Button';
+import CheckIcon from '@mui/icons-material/Check';
+
+
 
 function MarkComplete(props){
 
@@ -15,7 +18,7 @@ function MarkComplete(props){
 
 
     return(
-        <Button variant="contained" onClick={markComplete}>Mark Complete</Button>
+        <Button variant="contained" onClick={markComplete}><CheckIcon/></Button>
     )
 }
 
