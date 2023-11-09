@@ -1,6 +1,7 @@
 import axios from 'axios';
 import Button from '@mui/material/Button'
 import './DeleteTask.css';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 function DeleteTask(props){
 
@@ -17,7 +18,7 @@ function DeleteTask(props){
     };
 
     return (
-        <Button variant="contained" onClick={deleteTask}>Delete</Button>
+        <Button variant="contained" onClick={deleteTask}><DeleteIcon/></Button>
     )
 };
 

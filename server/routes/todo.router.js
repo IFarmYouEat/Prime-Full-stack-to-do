@@ -4,7 +4,7 @@ const pool = require('../modules/pool.js');
 
 // GET
 router.get('/', (req,res) => {
-    const sqlText = `SELECT * FROM "tasks";`
+    const sqlText = `SELECT * FROM "tasks" ORDER BY "complete";`
     pool.query(sqlText)
     .then((result) => {
         console.log('Data retrieved from tasks SQL table');

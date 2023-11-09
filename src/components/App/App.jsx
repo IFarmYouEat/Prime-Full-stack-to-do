@@ -4,6 +4,7 @@ import DisplayTask from '../DisplayTask/DisplayTask.jsx';
 import NewTask from '../NewTask/NewTask.jsx';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
+import Card from '@mui/material/Card';
 
 
 function App () {
@@ -28,25 +29,18 @@ function App () {
     <Container>
       <h1>TO DO APP</h1>
       <NewTask getTaskList={getTaskList}/>
+      <br/>
+      <br/>
       
-      <table>
-        <thead>
-          <tr>
-            <th>Task</th>
-            <th>Complete</th>
-          </tr>
-        </thead>
-        <tbody>
-          {
-            taskList.map((task) => {
-              return <DisplayTask key={task.id} task={task} getTaskList={getTaskList} />
-            })
-          }
-        </tbody>
-      </table>
-      </Container>
+      <Grid container spacing={2} >
+          {taskList.map((task) => (
+            <Grid item xs={6} key={task.id} wrap="wrap">
+                <DisplayTask key={task.id} task={task} getTaskList={getTaskList} />
+            </Grid>
+          ))}
+      </Grid>
+    </Container>
   );
-
 }
 
 export default App;
