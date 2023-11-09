@@ -18,7 +18,7 @@ function DisplayTask(props) {
     }
 
     return(
-     <Card variant="solid">
+     <Card>
         <Grid container alignItems="center" style={{ height: '60px' }}>
             <Grid item xs={7}>{props.task.task} </Grid>
             <Grid item xs={2}>{isComplete(props.task.complete)}</Grid>
