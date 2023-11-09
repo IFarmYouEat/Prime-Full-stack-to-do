@@ -41,7 +41,7 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
     - Postico
 
 ## License
-    
+    LICENSE
 
 ## Acknowledgement
     Thank you to Prime Digital Academy who taught me how to code good. 
